@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlayDot</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="app">
+    <section id="screen-welcome" class="screen active">
+      <div class="logo-area">
+        <svg width="140" height="140" viewBox="0 0 100 100" class="logo-svg">
+          <circle cx="50" cy="50" r="22" fill="#4FC3F7" />
+          <circle cx="50" cy="50" r="12" fill="#FFF8E7" />
+          <circle cx="50" cy="50" r="5" fill="#FFB300" />
+          <circle cx="50" cy="15" r="7" fill="#FFB300" />
+          <circle cx="85" cy="50" r="7" fill="#81C784" />
+          <circle cx="50" cy="85" r="7" fill="#FF8A65" />
+          <circle cx="15" cy="50" r="7" fill="#FFB300" />
+        </svg>
+        <h1>PlayDot</h1>
+      </div>
+      <button class="btn-primary focusable" id="btn-start" tabindex="0">Let's Go!</button>
+    </section>
+
+    <section id="screen-age" class="screen">
+      <h2>How old are you?</h2>
+      <div class="age-grid">
+        <button class="age-btn focusable" tabindex="0">5</button>
+        <button class="age-btn focusable" tabindex="0">6</button>
+        <button class="age-btn focusable" tabindex="0">7</button>
+        <button class="age-btn focusable" tabindex="0">8</button>
+        <button class="age-btn focusable" tabindex="0">9</button>
+        <button class="age-btn focusable" tabindex="0">10</button>
+        <button class="age-btn focusable" tabindex="0">11</button>
+        <button class="age-btn focusable" tabindex="0">12</button>
+      </div>
+    </section>
+
+    <section id="screen-name" class="screen">
+      <h2>What's your name?</h2>
+      <input type="text" id="name-input" class="focusable text-input" placeholder="Type here..." tabindex="0" autocomplete="off">
+      <div class="name-actions">
+        <button class="btn-secondary focusable" id="btn-random-name" tabindex="0">Pick a fun name</button>
+        <button class="btn-primary focusable" id="btn-name-next" tabindex="0">Next</button>
+      </div>
+    </section>
+
+    <section id="screen-avatar" class="screen">
+      <h2>Make your avatar</h2>
+      <div class="avatar-preview"><div id="avatar-circle" class="avatar-circle"></div></div>
+      <div class="color-options">
+        <button class="color-btn focusable" data-color="#FFB300" style="background-color: #FFB300;" tabindex="0"></button>
+        <button class="color-btn focusable" data-color="#4FC3F7" style="background-color: #4FC3F7;" tabindex="0"></button>
+        <button class="color-btn focusable" data-color="#81C784" style="background-color: #81C784;" tabindex="0"></button>
+        <button class="color-btn focusable" data-color="#FF8A65" style="background-color: #FF8A65;" tabindex="0"></button>
+      </div>
+      <button class="btn-primary focusable" id="btn-avatar-save" tabindex="0" style="margin-top: 30px;">Save</button>
+    </section>
+
+    <section id="screen-home" class="screen">
+      <header class="home-header">
+        <div class="user-info">
+          <div id="home-avatar" class="avatar-placeholder"></div>
+          <span id="display-name">Player</span>
+        </div>
+        <button class="settings-btn focusable" id="btn-open-settings" tabindex="0">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3E2723" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+        </button>
+      </header>
+      <div class="game-grid">
+        <div class="game-card focusable" id="card-puzzle" tabindex="0">
+          <svg width="60" height="60" viewBox="0 0 64 64" class="game-icon">
+            <rect x="4" y="4" width="24" height="24" rx="4" fill="#4FC3F7"/>
+            <rect x="36" y="4" width="24" height="24" rx="4" fill="#FFB300"/>
+            <rect x="4" y="36" width="24" height="24" rx="4" fill="#FFB300"/>
+            <rect x="36" y="36" width="24" height="24" rx="4" fill="#4FC3F7"/>
+          </svg>
+          <span>Puzzle</span>
+        </div>
+        <div class="game-card focusable" id="card-tictactoe" tabindex="0">
+          <svg width="60" height="60" viewBox="0 0 64 64" class="game-icon">
+            <line x1="21" y1="4" x2="21" y2="60" stroke="#3E2723" stroke-width="4" stroke-linecap="round"/>
+            <line x1="43" y1="4" x2="43" y2="60" stroke="#3E2723" stroke-width="4" stroke-linecap="round"/>
+            <line x1="4" y1="21" x2="60" y2="21" stroke="#3E2723" stroke-width="4" stroke-linecap="round"/>
+            <line x1="4" y1="43" x2="60" y2="43" stroke="#3E2723" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="12" cy="12" r="6" fill="#4FC3F7"/>
+            <path d="M32 32 L54 54 M54 32 L32 54" stroke="#FFB300" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+          <span>Tic-Tac-Toe</span>
+        </div>
+        <div class="game-card focusable" id="card-gk" tabindex="0">
+          <svg width="60" height="60" viewBox="0 0 64 64" class="game-icon">
+            <circle cx="32" cy="32" r="28" fill="none" stroke="#4FC3F7" stroke-width="6"/>
+            <path d="M32 14 C22 14 18 20 18 28 C18 34 22 38 26 42 L26 48 L38 48 L38 42 C42 38 46 34 46 28 C46 20 42 14 32 14 Z M26 52 L38 52 L38 56 L26 56 Z" fill="#3E2723"/>
+          </svg>
+          <span>GK Quiz</span>
+        </div>
+        <div class="game-card focusable" id="card-coloring" tabindex="0">
+          <svg width="60" height="60" viewBox="0 0 64 64" class="game-icon">
+            <circle cx="32" cy="32" r="24" fill="none" stroke="#3E2723" stroke-width="4"/>
+            <circle cx="20" cy="24" r="6" fill="#FFB300"/>
+            <circle cx="44" cy="24" r="6" fill="#4FC3F7"/>
+            <circle cx="20" cy="40" r="6" fill="#FF8A65"/>
+            <circle cx="44" cy="40" r="6" fill="#81C784"/>
+          </svg>
+          <span>Coloring</span>
+        </div>
+        <div class="game-card focusable" id="card-simon" tabindex="0">
+          <svg width="60" height="60" viewBox="0 0 64 64" class="game-icon">
+            <circle cx="32" cy="32" r="24" fill="#3E2723"/>
+            <path d="M32 32 L32 8 A24 24 0 0 1 56 32 Z" fill="#4FC3F7"/>
+            <path d="M32 32 L56 32 A24 24 0 0 1 32 56 Z" fill="#FFB300"/>
+            <path d="M32 32 L32 56 A24 24 0 0 1 8 32 Z" fill="#81C784"/>
+            <path d="M32 32 L8 32 A24 24 0 0 1 32 8 Z" fill="#FF5252"/>
+            <circle cx="32" cy="32" r="6" fill="#FFF8E7"/>
+          </svg>
+          <span>Simon Says</span>
+        </div>
+        <div class="game-card focusable" id="card-bubble" tabindex="0">
+          <svg width="60" height="60" viewBox="0 0 64 64" class="game-icon">
+            <circle cx="22" cy="24" r="14" fill="none" stroke="#4FC3F7" stroke-width="3"/>
+            <circle cx="46" cy="44" r="12" fill="none" stroke="#FFB300" stroke-width="3"/>
+            <circle cx="46" cy="20" r="8" fill="none" stroke="#FF8A65" stroke-width="3"/>
+            <circle cx="18" cy="46" r="9" fill="none" stroke="#81C784" stroke-width="3"/>
+          </svg>
+          <span>Bubble Pop</span>
+        </div>
+        <div class="game-card focusable" id="card-whack" tabindex="0">
+          <svg width="60" height="60" viewBox="0 0 64 64" class="game-icon">
+            <ellipse cx="32" cy="50" rx="26" ry="8" fill="#8B4513"/>
+            <ellipse cx="32" cy="46" rx="20" ry="6" fill="#3E2723"/>
+            <circle cx="32" cy="30" r="16" fill="#FFB300"/>
+            <ellipse cx="22" cy="14" rx="5" ry="12" fill="#FFB300"/>
+            <ellipse cx="42" cy="14" rx="5" ry="12" fill="#FFB300"/>
+            <circle cx="26" cy="28" r="3" fill="#3E2723"/>
+            <circle cx="38" cy="28" r="3" fill="#3E2723"/>
+            <ellipse cx="32" cy="36" rx="3" ry="2" fill="#3E2723"/>
+          </svg>
+          <span>Whack-a-Mole</span>
+        </div>
+      
+        <div class="game-card focusable" id="card-dotdot" tabindex="0">
+          <svg width="60" height="60" viewBox="0 0 64 64" class="game-icon">
+            <circle cx="12" cy="52" r="4" fill="#4FC3F7"/>
+            <circle cx="24" cy="20" r="4" fill="#FFB300"/>
+            <circle cx="40" cy="12" r="4" fill="#81C784"/>
+            <circle cx="52" cy="32" r="4" fill="#FF5252"/>
+            <circle cx="40" cy="52" r="4" fill="#9C27B0"/>
+            <line x1="12" y1="52" x2="24" y2="20" stroke="#3E2723" stroke-width="2" stroke-dasharray="3,3"/>
+            <line x1="24" y1="20" x2="40" y2="12" stroke="#3E2723" stroke-width="2" stroke-dasharray="3,3"/>
+          </svg>
+          <span>Dot to Dot</span>
+        </div>
+        <div class="game-card focusable" id="card-odd" tabindex="0">
+          <svg width="60" height="60" viewBox="0 0 64 64" class="game-icon">
+            <rect x="6" y="6" width="16" height="16" rx="3" fill="#4FC3F7"/>
+            <rect x="24" y="6" width="16" height="16" rx="3" fill="#4FC3F7"/>
+            <rect x="42" y="6" width="16" height="16" rx="3" fill="#4FC3F7"/>
+            <rect x="6" y="24" width="16" height="16" rx="3" fill="#4FC3F7"/>
+            <rect x="24" y="24" width="16" height="16" rx="3" fill="#FFB300"/>
+            <rect x="42" y="24" width="16" height="16" rx="3" fill="#4FC3F7"/>
+            <rect x="6" y="42" width="16" height="16" rx="3" fill="#4FC3F7"/>
+            <rect x="24" y="42" width="16" height="16" rx="3" fill="#4FC3F7"/>
+            <rect x="42" y="42" width="16" height="16" rx="3" fill="#4FC3F7"/>
+          </svg>
+          <span>Odd One Out</span>
+        </div>
+        <div class="game-card focusable" id="card-reaction" tabindex="0">
+          <svg width="60" height="60" viewBox="0 0 64 64" class="game-icon">
+            <circle cx="32" cy="32" r="24" fill="none" stroke="#3E2723" stroke-width="3"/>
+            <circle cx="32" cy="32" r="16" fill="#81C784"/>
+            <line x1="32" y1="10" x2="32" y2="20" stroke="#3E2723" stroke-width="3" stroke-linecap="round"/>
+            <line x1="32" y1="44" x2="32" y2="54" stroke="#3E2723" stroke-width="3" stroke-linecap="round"/>
+            <line x1="10" y1="32" x2="20" y2="32" stroke="#3E2723" stroke-width="3" stroke-linecap="round"/>
+            <line x1="44" y1="32" x2="54" y2="32" stroke="#3E2723" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <span>Tap Fast</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="screen-settings" class="screen">
+      <h2>Settings</h2>
+      <div class="settings-content">
+        <p class="settings-warning">Reset will delete all progress, name, avatar, and scores.</p>
+        <button class="btn-secondary focusable" id="btn-reset-app" tabindex="0" style="border-color: var(--error); color: var(--error);">Reset App</button>
+        <button class="btn-primary focusable" id="btn-settings-back" tabindex="0" style="margin-top: 20px;">Go Back</button>
+      </div>
+    </section>
+
+    <section id="screen-coloring" class="screen">
+      <div class="game-header">
+        <button class="btn-secondary focusable" id="btn-coloring-back" tabindex="0">Back</button>
+        <h2 id="coloring-status">Pick a color, then tap a shape!</h2>
+      </div>
+      <div class="coloring-container">
+        <div class="coloring-canvas" id="coloring-canvas"></div>
+        <div class="color-palette" id="color-palette">
+          <button class="color-swatch focusable" data-color="#FFB300" style="background-color: #FFB300;" tabindex="0"></button>
+          <button class="color-swatch focusable" data-color="#4FC3F7" style="background-color: #4FC3F7;" tabindex="0"></button>
+          <button class="color-swatch focusable" data-color="#81C784" style="background-color: #81C784;" tabindex="0"></button>
+          <button class="color-swatch focusable" data-color="#FF8A65" style="background-color: #FF8A65;" tabindex="0"></button>
+          <button class="color-swatch focusable" data-color="#FF5252" style="background-color: #FF5252;" tabindex="0"></button>
+          <button class="color-swatch focusable" data-color="#9C27B0" style="background-color: #9C27B0;" tabindex="0"></button>
+          <button class="color-swatch focusable" data-color="#FFFFFF" style="background-color: #FFFFFF; border: 2px solid #ccc;" tabindex="0"></button>
+        </div>
+        <div class="coloring-actions">
+          <button class="btn-secondary focusable" id="btn-coloring-next" tabindex="0">Next Picture</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Simon Says Screen -->
+    <section id="screen-simon" class="screen">
+      <div class="game-header">
+        <button class="btn-secondary focusable" id="btn-simon-back" tabindex="0">Back</button>
+        <div class="score-display">Level: <span id="simon-level">0</span> &nbsp; Best: <span id="simon-best">0</span></div>
+      </div>
+      <h2 id="simon-status" class="puzzle-status-text">Watch the pattern!</h2>
+      <div class="simon-grid" id="simon-grid">
+        <button class="simon-pad focusable" data-index="0" tabindex="0"></button>
+        <button class="simon-pad focusable" data-index="1" tabindex="0"></button>
+        <button class="simon-pad focusable" data-index="2" tabindex="0"></button>
+        <button class="simon-pad focusable" data-index="3" tabindex="0"></button>
+      </div>
+      <button class="btn-primary focusable" id="btn-simon-start" tabindex="0" style="margin-top: 25px;">Start Game</button>
+    </section>
+
+    <!-- Bubble Pop Screen -->
+    <section id="screen-bubble" class="screen">
+      <div class="game-header">
+        <button class="btn-secondary focusable" id="btn-bubble-back" tabindex="0">Back</button>
+        <div class="score-display">Time: <span id="bubble-time">60</span>s &nbsp; Score: <span id="bubble-score">0</span></div>
+      </div>
+      <div class="bubble-area" id="bubble-area">
+        <div class="bubble-pop-zone" id="bubble-pop-zone"></div>
+      </div>
+      <button class="btn-primary focusable" id="btn-bubble-start" tabindex="0" style="margin-top: 15px;">Start Game</button>
+      <div class="game-over-overlay hidden" id="bubble-game-over">
+        <h2>Time's Up!</h2>
+        <p>Score: <span id="bubble-final-score">0</span></p>
+        <button class="btn-primary focusable" id="btn-bubble-restart" tabindex="0" style="margin-top: 20px;">Play Again</button>
+      </div>
+    </section>
+
+    <!-- Whack-a-Mole Screen -->
+    <section id="screen-whack" class="screen">
+      <div class="game-header">
+        <button class="btn-secondary focusable" id="btn-whack-back" tabindex="0">Back</button>
+        <div class="score-display">Time: <span id="whack-time">60</span>s &nbsp; Score: <span id="whack-score">0</span></div>
+      </div>
+      <div class="whack-grid" id="whack-grid"></div>
+      <button class="btn-primary focusable" id="btn-whack-start" tabindex="0" style="margin-top: 20px;">Start Game</button>
+      <div class="game-over-overlay hidden" id="whack-game-over">
+        <h2>Time's Up!</h2>
+        <p>Score: <span id="whack-final-score">0</span></p>
+        <button class="btn-primary focusable" id="btn-whack-restart" tabindex="0" style="margin-top: 20px;">Play Again</button>
+      </div>
+    </section>
+
+    <section id="screen-gk" class="screen">
+      <div class="game-header">
+        <button class="btn-secondary focusable" id="btn-gk-back" tabindex="0">Back</button>
+        <div class="score-display">Score: <span id="gk-score">0</span></div>
+      </div>
+      <div class="gk-container">
+        <h2 id="gk-question" class="gk-question">Loading...</h2>
+        <div class="gk-options-grid" id="gk-options"></div>
+        <div id="gk-feedback" class="gk-feedback"></div>
+        <button class="btn-primary focusable hidden" id="btn-gk-next" tabindex="0">Next Question</button>
+      </div>
+    </section>
+
+    <section id="screen-puzzle" class="screen">
+      <div class="game-header">
+        <button class="btn-secondary focusable" id="btn-puzzle-back" tabindex="0">Back</button>
+        <div class="score-display">Score: <span id="puzzle-score">0</span></div>
+      </div>
+      <h2 id="puzzle-status" class="puzzle-status-text">Find the pairs!</h2>
+      <div class="memory-grid" id="memory-grid"></div>
+      <button class="btn-primary focusable" id="btn-puzzle-restart" tabindex="0" style="margin-top: 20px;">Play Again</button>
+    </section>
+
+    <section id="screen-tictactoe" class="screen">
+      <div class="game-header">
+        <button class="btn-secondary focusable" id="btn-ttt-back" tabindex="0">Back</button>
+        <h2 id="ttt-status">Your Turn</h2>
+      </div>
+      <div class="ttt-board" id="ttt-board">
+        <button class="ttt-cell focusable" data-index="0" tabindex="0"></button>
+        <button class="ttt-cell focusable" data-index="1" tabindex="0"></button>
+        <button class="ttt-cell focusable" data-index="2" tabindex="0"></button>
+        <button class="ttt-cell focusable" data-index="3" tabindex="0"></button>
+        <button class="ttt-cell focusable" data-index="4" tabindex="0"></button>
+        <button class="ttt-cell focusable" data-index="5" tabindex="0"></button>
+        <button class="ttt-cell focusable" data-index="6" tabindex="0"></button>
+        <button class="ttt-cell focusable" data-index="7" tabindex="0"></button>
+        <button class="ttt-cell focusable" data-index="8" tabindex="0"></button>
+      </div>
+      <button class="btn-primary focusable" id="btn-ttt-restart" tabindex="0" style="margin-top: 20px;">Play Again</button>
+    </section>
+  
+    <!-- Dot to Dot Screen -->
+    <section id="screen-dotdot" class="screen">
+      <div class="game-header">
+        <button class="btn-secondary focusable" id="btn-dotdot-back" tabindex="0">Back</button>
+        <h2 id="dotdot-status">Connect 1 to 5!</h2>
+      </div>
+      <div class="dotdot-area" id="dotdot-area"></div>
+      <button class="btn-primary focusable" id="btn-dotdot-restart" tabindex="0" style="margin-top: 15px;">Play Again</button>
+    </section>
+
+    <!-- Odd One Out Screen -->
+    <section id="screen-odd" class="screen">
+      <div class="game-header">
+        <button class="btn-secondary focusable" id="btn-odd-back" tabindex="0">Back</button>
+        <div class="score-display">Score: <span id="odd-score">0</span></div>
+      </div>
+      <h2 id="odd-status" class="puzzle-status-text">Find the different one!</h2>
+      <div class="odd-grid" id="odd-grid"></div>
+    </section>
+
+    <!-- Tap Fast Screen -->
+    <section id="screen-reaction" class="screen">
+      <div class="game-header">
+        <button class="btn-secondary focusable" id="btn-reaction-back" tabindex="0">Back</button>
+        <div class="score-display">Best: <span id="reaction-best">-</span> ms</div>
+      </div>
+      <div class="reaction-area" id="reaction-area">
+        <div class="reaction-circle" id="reaction-circle">
+          <span id="reaction-text">Press Start</span>
+        </div>
+      </div>
+      <button class="btn-primary focusable" id="btn-reaction-start" tabindex="0" style="margin-top: 15px;">Start</button>
+    </section>
+
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
