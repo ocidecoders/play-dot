@@ -4,15 +4,18 @@
     <loc>https://playdot.onrender.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <lastmod>2026-01-15</lastmod>
   </url>
   <url>
     <loc>https://playdot.onrender.com/blog/</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+    <lastmod>2026-01-15</lastmod>
   </url>
   <url>
     <loc>https://playdot.onrender.com/blog/top-5-browser-games.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+    <lastmod>2026-01-15</lastmod>
   </url>
 </urlset>

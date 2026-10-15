@@ -468,3 +468,39 @@ button { font-family: inherit; color: inherit; cursor: pointer; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+
+/* ---------- Welcome tagline & blog link ---------- */
+.logo-title {
+  /* keeps existing gradient text */
+  margin-top: 12px;
+}
+.logo-tagline {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  text-align: center;
+  margin-top: 8px;
+  letter-spacing: 0.2px;
+  max-width: 320px;
+}
+.welcome-blog-link {
+  display: inline-block;
+  margin-top: 22px;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #2196C9;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(79,195,247,0.10);
+  transition: background 0.2s, color 0.2s;
+}
+.welcome-blog-link:hover {
+  background: rgba(79,195,247,0.22);
+}
+.welcome-blog-link:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--yellow);
+}

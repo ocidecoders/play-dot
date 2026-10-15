@@ -3,22 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>PlayDot - Play Free Kids Games Online</title>
-  <meta name="description" content="PlayDot — free, safe, ad-free online games for kids ages 5 to 12. Puzzle, Tic-Tac-Toe, GK Quiz, Coloring, and more. Instant play, no downloads.">
+  <title>PlayDot - Play Free Online Web Games for Kids | No Download</title>
+  <meta name="description" content="PlayDot — the best free online kids games! Safe browser games, educational puzzles, memory boosters, and arcade fun for ages 5–12. No downloads, no ads, no sign-up.">
+  <meta name="keywords" content="PlayDot, PlayDot Games, free kids games online, browser games for kids, web games for kids, safe online games for kids, educational web games, play dot games, kids gaming hub">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#FFB300">
+  <meta name="author" content="PlayDot">
+  <meta name="application-name" content="PlayDot">
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="PlayDot">
-  <meta property="og:title" content="PlayDot - Play Free Kids Games Online">
-  <meta property="og:description" content="Safe, ad-free, and fun games for kids. Instant play in your browser.">
+  <meta property="og:title" content="PlayDot - Free Web Games for Kids">
+  <meta property="og:description" content="Play fun, safe, and free online games for kids on PlayDot directly in your browser. No downloads required.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://playdot.onrender.com/">
   <meta property="og:image" content="/web-app-manifest-512x512.png">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="PlayDot - Play Free Kids Games Online">
-  <meta name="twitter:description" content="Safe, ad-free, and fun games for kids.">
+  <meta name="twitter:title" content="PlayDot - Free Web Games for Kids">
+  <meta name="twitter:description" content="Safe, fun, ad-free browser games for kids ages 5 to 12.">
 
   <!-- Icons -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -33,16 +37,41 @@
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "PlayDot",
-    "alternateName": ["Play Dot", "PlayDot Games"],
+    "alternateName": ["Play Dot", "PlayDot Games", "PlayDot Kids Gaming Hub"],
     "url": "https://playdot.onrender.com/",
-    "description": "Free, safe, ad-free online games for kids ages 5 to 12."
+    "description": "Free, safe, ad-free online games for kids ages 5 to 12.",
+    "inLanguage": "en",
+    "audience": {
+      "@type": "PeopleAudience",
+      "suggestedMinAge": 5,
+      "suggestedMaxAge": 12
+    }
   }
   </script>
 
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Visually hidden but crawlable for SEO */
+    .sr-only {
+      position: absolute !important;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0);
+      white-space: nowrap; border: 0;
+    }
+  </style>
 </head>
 <body>
   <div id="app">
+    <!-- SEO introduction (visually hidden, readable by search engines) -->
+    <p class="sr-only">
+      Welcome to PlayDot — the best free online web games for kids.
+      Play safe, ad-free browser games including puzzle games, memory match,
+      Tic-Tac-Toe, math quizzes, coloring books, and arcade mini games.
+      All games work instantly on phones, tablets, and Android TV with no downloads,
+      no sign-up, and no ads. Perfect for children aged 5 to 12.
+    </p>
 
     <!-- Welcome -->
     <section id="screen-welcome" class="screen active">
@@ -56,9 +85,14 @@
           <circle cx="50" cy="85" r="7" fill="#FF8A65"/>
           <circle cx="15" cy="50" r="7" fill="#FFB300"/>
         </svg>
-        <h1>PlayDot</h1>
+        <h1 class="logo-title">
+          PlayDot
+          <span class="sr-only">— Free Online Web Games for Kids, No Download Required</span>
+        </h1>
+        <p class="logo-tagline">Free Online Games for Kids · Ages 5–12 · No Downloads</p>
       </div>
       <button class="btn-primary focusable" id="btn-start">Let's Go!</button>
+      <a href="/blog/" class="welcome-blog-link">Read our Blog</a>
     </section>
 
     <!-- Age -->
