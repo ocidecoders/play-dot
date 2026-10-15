@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://playdot.onrender.com/sitemap.xml
